@@ -1,2 +1,13 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
+
+.floatright{
+    float: right
+}
+.floatleft{
+    float: left;
+    margin: 0 10px
+}
+.notextdecoration{
+    text-decoration: none
+}

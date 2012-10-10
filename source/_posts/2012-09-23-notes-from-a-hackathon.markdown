@@ -1,0 +1,62 @@
+---
+layout: post
+title: "Notes from a hackathon"
+date: 2012-09-23 17:42
+comments: true
+categories: social
+---
+A few weeks ago I had the opportunity to attend a rather special event: the [Digital Sizzle Hackathon](http://www.thedigitalsizzle.com/ "Digital Sizzle Hackathon") in London. It was a rare, exhausting and stimulating weekend, and an experience that I'd thoroughly recommend to just about anyone.
+
+The weekend kicked off with an introduction to the event on the Friday evening. The event was hosted at Mozilla HQ in Leicester Square, a sumptuous workspace ideally situated. After a quick kick-off by the event organisers and an explanation from the API providers, the call for ideas began. Any fears of a collective creative block were soon put to rest as the line of speakers grew ever larger.
+
+<div class="floatright">
+    <a href="http://www.flickr.com/photos/paul_clarke/7986249580/" class="notextdecoration">
+        <img src="http://farm9.staticflickr.com/8310/7986249580_78dd35f904.jpg" title="Kick off event"/>
+    </a>
+</div>
+
+The ideas flowed thick and fast, with speakers appealing to their audience's curiosity, their appetite for a challenge, and their love of lasers. The evening wrapped up with pizza and beers, over which the teams slowly coalesced around the popular ideas. The Digital Sizzle team were admirable at making sure nobody was left without a team.
+
+After a night's sleep - or lack of it on my part thanks to a particularly ill-timed bout of insomnia - we reconvened at 9am to start work. Breakfast was laid on, and Mozilla's absurdly sophisticated coffee machine revved into action (the only rule: if you were taught how to use it you then had to pass that knowledge on to at least one other person).
+
+Plans were formalised, brains were set a'stormin', then slowly the exicted chatter subsided into the pitter patter of determined typing. At this point, dear reader, please be patient as I indulge in a momentary digression.
+
+<div class="floatleft">
+    <a href="http://www.flickr.com/photos/paul_clarke/7989197960/" class="notextdecoration">
+        <img src="http://farm9.staticflickr.com/8452/7989197960_5da00a8e88_n_d.jpg" title="Locked in coder"/>
+    </a>
+</div>
+
+As outlined in my previous post, I have only relatively recently crossed the line from 'programmer as a day job' to 'programmer as a vocation'. This distinction came mainly from the realisation that I was simply using the wrong language. After using Java for most of my career, switching to liberal JavaScript was akin to a plunge into crystal cool waters following a long sauna. This is not to say, of course, that JavaScript is a superior language to Java. I merely mean that I fall more on the side of Liberalism in [Steve Yegge's scale of software ideology](https://plus.google.com/u/0/110981030061712822816/posts/KaSKeg4vQtz "Steve Yegge's Magic Mystery Bus"), thus Java was simply a wrong fit for me.
+
+Despite my new found enthusiasm for programming however, I was initially hesitant when I heard about the hackathon. After all, I've only been coding full time in JavaScript for six months; surely the hackathon would be full of Linus-alikes and Wozniak-ians. I'd be left looking like a Sunday League footballer who's stumbled into the Premier league.
+
+I mention this as I know that I am not alone in this; I have since spoken to a few people who have expressed similar feelings. In this post, my aim is to reassure you that such concerns are baseless. As I started coding away that first morning, it dawned on me that this was not the competitive environment I feared. Rather, the whole room crackled with the energy of creative minds doing what they love the most in its purest form; unhindered by estimates, unit tests, maintainability concerns, and all the other necessary but occasionally tiresome aspects of a professional developer's worklife.
+
+<div class="floatright">
+    <a href="http://www.flickr.com/photos/paul_clarke/7989357028/" class="notextdecoration">
+        <img src="http://farm9.staticflickr.com/8450/7989357028_481fc0e899_n.jpg" title="Burgers"/>
+    </a>
+</div>
+
+For that weekend, we could immerse ourselves entirely on a project of our own volition, with not a care in the world. We had all the food, beer, and drink we could possibly want, and if you got stuck on an issue there was likely to be an expert within spitting distance who would be happy to help. Evening soon arrived, and with it burgers from the BBQ that put the Sizzle into Digital Sizzle. Hand on heart, one of the best burgers I've ever had. Despite my insomnia the previous night, it wasn't till gone three in the morning that I found a quiet spot to lay my head. I drifted off to the sounds of some nightowls putting the world to rights in a deep philosophical debate.
+
+I awoke 4 hours later and groggily returned to my station, coffee in hand, and was instantly immersed again. After a few hours of flow, burritos were served for lunch and it dawned on us that we only had a few hours left to pull together all the disparate threads of our project. We furiously hacked away right up until the presentation, trying to put the finishing touches together but alas we didn't manage to match up the audio with the visuals in time.
+
+After a marathon coding session, the reward of the project presentation was fantastic. Here were a few highlights that stuck out for me, although with 24 projects in total there are too many gems to list here:
+* Twitter killed my bunny - a game where a tweet-powered bunny tried to escape the 'Negativity crusher', which came slamming down when the sentiment from social networks turned sour.
+* Real weather - an arduino powered spectacle involving water pumped up and over corrugated plastic to simulate rain, a fan for the wind, and a lightbulb for the sun.
+* Karakilio - a breathtakingly ambitious spotify-powered karaoke app played over mobile phones. Unfortunately it succumbed to the curse of the demo, but it was a great idea.
+* Data necklace - the most beautiful example of geek love I've ever seen. A talented Romeo used a nearby laser cutting shop to create plastic necklaces containing, amongst other things, batons whose size were determined by the number of tweets about a recent celebrity death. It was a macabre but touching gift for his (no doubt slightly bemused) wife.
+
+<div class="floatleft">
+    <a href="http://www.flickr.com/photos/paul_clarke/7992308349/" class="notextdecoration">
+        <img src="http://farm9.staticflickr.com/8446/7992308349_272315417d.jpg" title="Presentations"/>
+    </a>
+</div>
+
+After seeing water pumps being tested in the shower at two in the morning, or hearing the occasional yells which constitued the testing for "Scream Ball", it was really great to see these projects finished and in the flesh. The devils of presentation visited a few poor presenters, but on the whole it was inspiring and humbling to see what people had been able to create in a weekend. I also learned that it's very important to put a bit of time and energy into the presentation of your project. Our team lead did a fantastic job given the circumstances, but whilst we'd spent the last precious moments feverishly hacking away, other teams had put together a great slideshow explaining their concept and what they were trying to achieve. It makes a big difference.
+
+ On the whole, I found the hackathon to be a hugely rewarding and enjoyable experience. Regardless of your experience or perceived competence, I guarantee you will have a lot of fun, and it'll reconnect you with the love of programming which thrust you into your career in the first place.
+
+ All photo credits: [Paul Clarke](http://paulclarke.com)
