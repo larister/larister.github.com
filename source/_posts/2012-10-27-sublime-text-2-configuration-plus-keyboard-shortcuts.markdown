@@ -6,7 +6,7 @@ comments: true
 categories: tools
 ---
 
-I recently did a talk at my local JavaScript meetup ([Async in Brighton][Async]) about Sublime Text 2 and Chrome Dev Tools. Afterwards, I had a few requests to post about which plugins I use, and my preferences. I also plan on posting the video of the talk, but in the meantime here are my top tips:
+I recently did a talk at my local JavaScript meetup ([Async in Brighton][async]) about [Sublime Text 2][sublimeText] and Chrome Dev Tools. Afterwards, I had a few requests to post about which plugins I use, and my preferences. I also plan on posting the video of the talk, but in the meantime here are my top tips:
 
 ##My Sublime Text 2 Plugins:
 
@@ -162,7 +162,8 @@ _Ctrl + Shift + up/down_
 Add cursor:
 _Cmd + mouse click_
 
-[Async]: http://asyncjs.com/
+[async]: http://asyncjs.com/
+[sublimeText]: http://www.sublimetext.com/2
 [packageControl]: http://wbond.net/sublime_packages/package_control/installation
 [sublimeLinter]: https://github.com/SublimeLinter/SublimeLinter
 [git]: https://github.com/kemayo/sublime-text-2-git
