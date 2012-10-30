@@ -81,86 +81,110 @@ During my presentation, I wanted to show off as many features as possible in the
 
 ###Layout
 
-Switch between multicolumn layouts:
-_Cmd + Alt + [1-4]_
+#####Switch between multicolumn layouts:  
+Mac: _Cmd + Alt + [1-4]_  
+Win/Linux: _Alt + Shift + [1-4]_
 
-Show grid layout:
-_Cmd + Alt + 5_
+#####Show grid layout:  
+Mac: _Cmd + Alt + 5_  
+Win/Linux: _Alt + Shift + 5_
 
-Switch between multirow layouts:
-_Cmd + Alt + Shift + [1-3]_
+#####Switch between multirow layouts:  
+Mac: _Cmd + Alt + Shift + [1-3]_  
+Win/Linux: _Alt + Shift + [8-9]_
 
-Move focus to panel:
-_Ctrl + [1-4]_
+#####Move focus to panel:  
+_Ctrl + [1-4]_  
 
-Move file to panel:
+#####Move file to panel:  
 _Ctrl + Shift + [1-4]_
 
-Distraction Free Editing:
-_Cmd + Ctrl + Shift + F_
+#####Distraction Free Editing:  
+Mac: _Cmd + Ctrl + Shift + F_  
+Win/Linux: _Shift + F11_
 
 ###Autocompletes
 
-Show 'Go To' autocomplete:
-_Cmd + P_
+#####Show 'Go To' autocomplete:  
+Mac: _Cmd + P_  
+Win/Linux: _Ctrl + P_
 
-From within 'Go To' autocomplete:
-'@' = function
+From within 'Go To' autocomplete:  
+'@' = function  
 ':' = line number
 
-Show Command Palette:
-_Cmd + Shift + P_
+#####Show Command Palette:  
+Mac: _Cmd + Shift + P_  
+Win/Linux: _Ctrl + Shift + P_
 
 ###Editing
 
-Code folding:
-_Cmd + Alt + []_
+#####Code folding:  
+Mac: _Cmd + Alt + []_  
+Win/Linux: _Ctrl + Shift + []_
 
-Move line up/down:
-_Cmd + Ctrl + up/down_
+#####Move line up/down:  
+Mac: _Cmd + Ctrl + up/down_  
+Win/Linux: _Ctrl + Shift + up/down_
 
-Indent:
-_Cmd + []_
+#####Indent:  
+Mac: _Cmd + []_   
+Win/Linux: _Ctrl + []_
 
-Sort Lines:
-_Ctrl + F5_
+#####Sort Lines:  
+Mac: _Ctrl + F5_  
+Win/Linux: _F9_
 
-Join Lines:
-_Cmd + J_
+#####Join Lines:  
+Mac: _Cmd + J_  
+Win/Linux: _unbound by default_
 
 ###Selecting
 
-Select Word:
-_Cmd + D_
+#####Select Word:  
+Mac: _Cmd + D_  
+Win/Linux: _Ctrl + D_
 
-Select Line:
-_Cmd + L_
+#####Select Line:  
+Mac: _Cmd + L_  
+Win/Linux: _Ctrl + L_
 
-Select Scope:
-_Cmd + Shift + Space_
+#####Select Scope:  
+Mac: _Cmd + Shift + Space_  
+Win/Linux: _Ctrl + Shift + Space_
 
-Select Brackets:
+#####Select Brackets:  
 _Ctrl + Shift + M_
 
 ###Multi-selecting
 
-Select next occurrence:
-_Cmd + D_
+#####Select next occurrence:  
+Mac: _Cmd + D_  
+Win/Linux: _Ctrl + D_
 
-Skip occurrence:
-_Cmd + K_
+#####Skip occurrence:  
+Mac: _Cmd + K_  
+Win/Linux: _Ctrl + K_
 
-Undo selection:
-_Cmd + U_
+#####Undo selection:  
+Mac: _Cmd + U_  
+Win/Linux: _Ctrl + U_
 
-Select block:
-_Alt + mouse drag_
+#####Select all occurrences:  
+Mac: _Ctrl + Cmd + G_  
+Win/Linux: _Alt + F3_
 
-Add previous/next line:
-_Ctrl + Shift + up/down_
+#####Select block:  
+Mac: _Alt + mouse drag_  
+Win/Linux: _Shift + right mouse drag_
 
-Add cursor:
-_Cmd + mouse click_
+#####Add previous/next line:  
+Mac: _Ctrl + Shift + up/down_  
+Win/Linux: _Ctrl + Alt + up/down_
+
+#####Add cursor:  
+Mac: _Cmd + mouse click_  
+Win/Linux: _Ctrl + mouse click_
 
 [async]: http://asyncjs.com/
 [sublimeText]: http://www.sublimetext.com/2
