@@ -39,6 +39,10 @@ $(function() {
         var extraTotals;
 
         extraTotals = _(boxExtras).reduce(function(memo, extrasEntry){
+            if(_(extrasEntry).isEmpty()){
+                return memo;
+            }
+
             var items = $.csv.toArray(extrasEntry);
 
             _(items).each(function(item){
@@ -93,19 +97,21 @@ $(function() {
 
         headingPositions = parseHeadings(lines[0]);
 
-        _(lines.slice(1)).each(function(line){
-            var fields = $.csv.toArray(line);
-            var record = {};
+        _(lines.slice(1)).chain()
+            .reject(function(item) { return _(item).isEmpty(); })
+            .each(function(line){
+                var fields = $.csv.toArray(line);
+                var record = {};
 
-            record.id = fields[headingPositions[CUSTOMER_NUM]];
-            record.firstName = fields[headingPositions[CUSTOMER_FIRSTNAME]];
-            record.lastName = fields[headingPositions[CUSTOMER_LASTNAME]];
-            record.boxType = fields[headingPositions[BOX_TYPE]];
-            record.boxLikes = fields[headingPositions[BOX_LIKES]];
-            record.boxDislikes = fields[headingPositions[BOX_DISLIKES]];
-            record.boxExtras = fields[headingPositions[BOX_EXTRAS]];
+                record.id = fields[headingPositions[CUSTOMER_NUM]];
+                record.firstName = fields[headingPositions[CUSTOMER_FIRSTNAME]];
+                record.lastName = fields[headingPositions[CUSTOMER_LASTNAME]];
+                record.boxType = fields[headingPositions[BOX_TYPE]];
+                record.boxLikes = fields[headingPositions[BOX_LIKES]];
+                record.boxDislikes = fields[headingPositions[BOX_DISLIKES]];
+                record.boxExtras = fields[headingPositions[BOX_EXTRAS]];
 
-            records.push(record);
+                records.push(record);
         });
         console.log(records);
 
