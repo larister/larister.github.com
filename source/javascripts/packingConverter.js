@@ -4,6 +4,7 @@ $(function() {
         interpolate : /\{\{(.+?)\}\}/g
     });
 
+    var ROUND_NAME = 'Delivery Route';
     var CUSTOMER_NUM = 'Customer Number';
     var CUSTOMER_FIRSTNAME = 'Customer First Name';
     var CUSTOMER_LASTNAME = 'Customer Last Name';
@@ -11,7 +12,7 @@ $(function() {
     var BOX_LIKES = 'Box Likes';
     var BOX_DISLIKES = 'Box Dislikes';
     var BOX_EXTRAS = 'Box Extra Line Items';
-    var requiredFields = [CUSTOMER_NUM, CUSTOMER_FIRSTNAME, CUSTOMER_LASTNAME, BOX_TYPE, BOX_LIKES, BOX_DISLIKES, BOX_EXTRAS];
+    var requiredFields = [ROUND_NAME, CUSTOMER_NUM, CUSTOMER_FIRSTNAME, CUSTOMER_LASTNAME, BOX_TYPE, BOX_LIKES, BOX_DISLIKES, BOX_EXTRAS];
 
     // Check for the various File API support.
     if (!window.File || !window.FileReader || !window.FileList || !window.Blob) {
@@ -78,6 +79,7 @@ $(function() {
         console.log(boxTypes);
 
         return {
+            roundName: records[0].roundName, // Pluck out the round name from the first record (they're all the same)
             boxTotals: boxTypes,
             extraTotals: aggregateBoxExtras(extras)
         };
@@ -102,6 +104,8 @@ $(function() {
             .each(function(line){
                 var fields = $.csv.toArray(line);
                 var record = {};
+
+                record.roundName = fields[headingPositions[ROUND_NAME]];
 
                 record.id = fields[headingPositions[CUSTOMER_NUM]];
                 record.firstName = fields[headingPositions[CUSTOMER_FIRSTNAME]];
@@ -135,6 +139,8 @@ $(function() {
             '</div>'
         );
         var boxTotalsTemplate = _.template(
+            '<div class="page-break"></div>' +
+            '<h2>Round Totals for {{roundName}}</h2>' +
             '<div class="total">' +
             '<% _.each(boxTotals, function(value, key) { %> <div>{{value}} x {{key}}</div> <% }); %>' +
             '</div>' +
@@ -148,7 +154,7 @@ $(function() {
         });
         output.push(boxTotalsTemplate(data.totals));
 
-        $('#records').html(output.join(''));
+        $('#records').html('<h2>Customer Details for ' + data.records[0].roundName + '</h2>').append(output.join(''));
     }
 
     function handleFileSelect(e) {
