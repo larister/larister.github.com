@@ -1,0 +1,21 @@
+@media all {
+    .page-break { display: none; }
+}
+
+@media print {
+    .controls { display: none; }
+    .page-break { display: block; page-break-before: always; }
+}
+
+.record {
+    margin: 20px 0;
+}
+
+.total {
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+.noValue {
+    font-style: italic;
+}

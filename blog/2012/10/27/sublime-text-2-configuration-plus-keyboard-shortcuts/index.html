@@ -1,0 +1,508 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Sublime Text 2: Configuration + Keyboard shortcuts - Alastair Lockie</title>
+  <meta name="author" content="Alastair Lockie">
+
+  
+  <meta name="description" content="I recently did a talk at my local JavaScript meetup (Async in Brighton) about Sublime Text 2 and Chrome Dev Tools. Afterwards, I had a few requests &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://larister.github.com/blog/2012/10/27/sublime-text-2-configuration-plus-keyboard-shortcuts/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Alastair Lockie" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36564455-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Alastair Lockie</a></h1>
+  
+    <h2>Nuggets of JavaScript</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:larister.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Sublime Text 2: Configuration + Keyboard Shortcuts</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-27T18:38:00+01:00" pubdate data-updated="true">Oct 27<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I recently did a talk at my local JavaScript meetup (<a href="http://asyncjs.com/">Async in Brighton</a>) about <a href="http://www.sublimetext.com/2">Sublime Text 2</a> and Chrome Dev Tools. Afterwards, I had a few requests to post about which plugins I use, and my preferences. I also plan on posting the video of the talk, but in the meantime here are my top tips:</p>
+
+<h2>My Sublime Text 2 Plugins:</h2>
+
+<p>Remember, the first step is to install <a href="http://wbond.net/sublime_packages/package_control/installation">Will Bond&#8217;s package control</a>. Once you&#8217;ve done that, just open up the command palette (Cmd + Shift + P or Ctrl + Shift + P) and type &#8216;install&#8217;, followed by enter. This will bring up a filterable list of all available packages.</p>
+
+<h3><a href="https://github.com/SublimeLinter/SublimeLinter">Sublime Linter</a></h3>
+
+<p>An essential plugin, Sublime Linter saves you from future runtime headaches by pointing out missing semicolons, mis-spelled variable names etc. Works for JavaScript, CSS, and plenty more besides.</p>
+
+<h3><a href="https://github.com/kemayo/sublime-text-2-git">Git</a></h3>
+
+<p>Very full featured Git plugin for ST2, great integration of standard commands such as diff, status, log etc., but as an added bonus it takes your selection into account when using features such as &#8216;Blame&#8217; and &#8216;Add Hunk&#8217;.</p>
+
+<h3><a href="https://github.com/bgreenlee/sublime-github">Github Gists</a></h3>
+
+<p>Nice little plugin for creating a Github Gist from your selection, public or private. You can also select and copy a gist to the clipboard ready for use.</p>
+
+<h3><a href="https://github.com/sublimator/ZenCoding">Zen Coding</a></h3>
+
+<p>Adds in support for Zen Coding, a way of creating huge chunks of HTML quickly and easily using CSS selector &#8216;haikus&#8217;. The Github readme is a bit sparse, but remember you can just type &#8216;zen&#8217; into the Sublime Text 2 command palette once the plugin is installed, and it&#8217;ll show you all the available commands. For more information on Zen Coding, check out <a href="http://coding.smashingmagazine.com/2009/11/21/zen-coding-a-new-way-to-write-html-code/">this overview at Smashing Magazine</a>.</p>
+
+<h3><a href="https://github.com/joelpt/sublimetext-automatic-backups">Automatic Backups</a></h3>
+
+<p>One of the earliest plugins, it simply stores a copy of your file each time you save to a backup folder on your disk. You can step back through history through previous revisions of the file simply and easily, or merge two versions together. These days most of us use Git or some other form of version control, but Automatic Backups is still a nice safety net to have around.</p>
+
+<h3><a href="https://github.com/titoBouzout/SideBarEnhancements">Sidebar Enhancements</a></h3>
+
+<p>Adds a few extras to the default Sublime Text 2 sidebar, which is pretty basic straight out the box; notably more control over file management (duplicate etc.), as well as more advanced features such as advanced copy options and opening a file in the browser.</p>
+
+<h3><a href="https://github.com/SublimeText/Tag">Tag</a></h3>
+
+<p>Small plugin that just gives a helping hand when writing HTML/XML, with features such as linting, formatting and auto-closing on forward slash.</p>
+
+<h3><a href="https://github.com/fjl/Sublime-Missing-Palette-Commands">Missing Palette Commands</a></h3>
+
+<p>Even smaller plugin which simply adds in some commands to the command palette. If you find something missing from there, just add it into the Missing.sublime-commands JSON file yourself!</p>
+
+<h2>My Sublime Text 2 Preferences</h2>
+
+<p>I generally find the Sublime Text 2 default preferences to be pretty sensible, but there are some nice features turned off by default so it&#8217;s definitely worth taking a gander at the settings file (just type &#8216;prefd&#8217; into the command palette) to see what&#8217;s on offer. Below is my preferences file for reference; &#8216;Vintage&#8217; mode is off at the moment but I plan on using it more once my Vim-fu improves.</p>
+
+<figure class='code'><figcaption><span>My Sublime Text 2 Preferences</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="c1">// Show folders in the side bar in bold</span>
+</span><span class='line'>    <span class="s2">&quot;bold_folder_labels&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// Word list to use for spell checking</span>
+</span><span class='line'>    <span class="s2">&quot;dictionary&quot;</span><span class="o">:</span> <span class="s2">&quot;Packages/Language - English/en_GB.dic&quot;</span><span class="p">,</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// Set to true to draw a border around the visible rectangle on the minimap.</span>
+</span><span class='line'>    <span class="c1">// The color of the border will be determined by the &quot;minimapBorder&quot; key in</span>
+</span><span class='line'>    <span class="c1">// the color scheme</span>
+</span><span class='line'>    <span class="s2">&quot;draw_minimap_border&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="s2">&quot;font_size&quot;</span><span class="o">:</span> <span class="mf">14.0</span><span class="p">,</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// List any packages to ignore here. When removing entries from this list,</span>
+</span><span class='line'>    <span class="c1">// a restart may be required if the package contains plugins.</span>
+</span><span class='line'>    <span class="s2">&quot;ignored_packages&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;Vintage&quot;</span><span class="p">],</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// Set to true to insert spaces when tab is pressed</span>
+</span><span class='line'>    <span class="s2">&quot;translate_tabs_to_spaces&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// Set to true to removing trailing white space on save</span>
+</span><span class='line'>    <span class="s2">&quot;trim_trailing_white_space_on_save&quot;</span><span class="o">:</span> <span class="kc">true</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Favourite Keyboard Shortcuts</h2>
+
+<p>During my presentation, I wanted to show off as many features as possible in the time available, so I used keyboard shortcuts where I could. I had a few questions about what the shortcut was for certain features, so I thought I&#8217;d include them in full here.</p>
+
+<h3>Layout</h3>
+
+<h5>Switch between multicolumn layouts:</h5>
+
+<p>Mac: <em>Cmd + Alt + [1-4]</em><br/>
+Win/Linux: <em>Alt + Shift + [1-4]</em></p>
+
+<h5>Show grid layout:</h5>
+
+<p>Mac: <em>Cmd + Alt + 5</em><br/>
+Win/Linux: <em>Alt + Shift + 5</em></p>
+
+<h5>Switch between multirow layouts:</h5>
+
+<p>Mac: <em>Cmd + Alt + Shift + [1-3]</em><br/>
+Win/Linux: <em>Alt + Shift + [8-9]</em></p>
+
+<h5>Move focus to panel:</h5>
+
+<p><em>Ctrl + [1-4]</em></p>
+
+<h5>Move file to panel:</h5>
+
+<p><em>Ctrl + Shift + [1-4]</em></p>
+
+<h5>Distraction Free Editing:</h5>
+
+<p>Mac: <em>Cmd + Ctrl + Shift + F</em><br/>
+Win/Linux: <em>Shift + F11</em></p>
+
+<h3>Autocompletes</h3>
+
+<h5>Show &#8216;Go To&#8217; autocomplete:</h5>
+
+<p>Mac: <em>Cmd + P</em><br/>
+Win/Linux: <em>Ctrl + P</em></p>
+
+<p>From within &#8216;Go To&#8217; autocomplete:<br/>
+&#8217;@&#8217; = function<br/>
+&#8217;:&#8217; = line number</p>
+
+<h5>Show Command Palette:</h5>
+
+<p>Mac: <em>Cmd + Shift + P</em><br/>
+Win/Linux: <em>Ctrl + Shift + P</em></p>
+
+<h3>Editing</h3>
+
+<h5>Code folding:</h5>
+
+<p>Mac: <em>Cmd + Alt + []</em><br/>
+Win/Linux: <em>Ctrl + Shift + []</em></p>
+
+<h5>Move line up/down:</h5>
+
+<p>Mac: <em>Cmd + Ctrl + up/down</em><br/>
+Win/Linux: <em>Ctrl + Shift + up/down</em></p>
+
+<h5>Indent:</h5>
+
+<p>Mac: <em>Cmd + []</em> <br/>
+Win/Linux: <em>Ctrl + []</em></p>
+
+<h5>Sort Lines:</h5>
+
+<p>Mac: <em>Ctrl + F5</em><br/>
+Win/Linux: <em>F9</em></p>
+
+<h5>Join Lines:</h5>
+
+<p>Mac: <em>Cmd + J</em><br/>
+Win/Linux: <em>unbound by default</em></p>
+
+<h3>Selecting</h3>
+
+<h5>Select Word:</h5>
+
+<p>Mac: <em>Cmd + D</em><br/>
+Win/Linux: <em>Ctrl + D</em></p>
+
+<h5>Select Line:</h5>
+
+<p>Mac: <em>Cmd + L</em><br/>
+Win/Linux: <em>Ctrl + L</em></p>
+
+<h5>Select Scope:</h5>
+
+<p>Mac: <em>Cmd + Shift + Space</em><br/>
+Win/Linux: <em>Ctrl + Shift + Space</em></p>
+
+<h5>Select Brackets:</h5>
+
+<p><em>Ctrl + Shift + M</em></p>
+
+<h3>Multi-selecting</h3>
+
+<h5>Select next occurrence:</h5>
+
+<p>Mac: <em>Cmd + D</em><br/>
+Win/Linux: <em>Ctrl + D</em></p>
+
+<h5>Skip occurrence:</h5>
+
+<p>Mac: <em>Cmd + K</em><br/>
+Win/Linux: <em>Ctrl + K</em></p>
+
+<h5>Undo selection:</h5>
+
+<p>Mac: <em>Cmd + U</em><br/>
+Win/Linux: <em>Ctrl + U</em></p>
+
+<h5>Select all occurrences:</h5>
+
+<p>Mac: <em>Ctrl + Cmd + G</em><br/>
+Win/Linux: <em>Alt + F3</em></p>
+
+<h5>Select block:</h5>
+
+<p>Mac: <em>Alt + mouse drag</em><br/>
+Win/Linux: <em>Shift + right mouse drag</em></p>
+
+<h5>Add previous/next line:</h5>
+
+<p>Mac: <em>Ctrl + Shift + up/down</em><br/>
+Win/Linux: <em>Ctrl + Alt + up/down</em></p>
+
+<h5>Add cursor:</h5>
+
+<p>Mac: <em>Cmd + mouse click</em><br/>
+Win/Linux: <em>Ctrl + mouse click</em></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Alastair Lockie</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-27T18:38:00+01:00" pubdate data-updated="true">Oct 27<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/tools/'>tools</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://larister.github.com/blog/2012/10/27/sublime-text-2-configuration-plus-keyboard-shortcuts/" data-via="larister" data-counturl="http://larister.github.com/blog/2012/10/27/sublime-text-2-configuration-plus-keyboard-shortcuts/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/09/23/notes-from-a-hackathon/" title="Previous Post: Notes from a hackathon">&laquo; Notes from a hackathon</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/02/24/starting-a-coding-meetup/" title="Next Post: Starting a coding meetup">Starting a coding meetup &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/24/starting-a-coding-meetup/">Starting a coding meetup</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/27/sublime-text-2-configuration-plus-keyboard-shortcuts/">Sublime Text 2: Configuration + Keyboard shortcuts</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/23/notes-from-a-hackathon/">Notes from a hackathon</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/04/15/from-java-to-javascript/">From Java to JavaScript</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/larister">@larister</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'larister',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("larister", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/larister" class="twitter-follow-button" data-show-count="false">Follow @larister</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Alastair Lockie -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

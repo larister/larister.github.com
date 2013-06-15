@@ -1,0 +1,340 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Notes from a hackathon - Alastair Lockie</title>
+  <meta name="author" content="Alastair Lockie">
+
+  
+  <meta name="description" content="A few weeks ago I had the opportunity to attend a rather special event: the Digital Sizzle Hackathon in London. It was a rare, exhausting and &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://larister.github.com/blog/2012/09/23/notes-from-a-hackathon/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Alastair Lockie" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36564455-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Alastair Lockie</a></h1>
+  
+    <h2>Nuggets of JavaScript</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:larister.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Notes From a Hackathon</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-23T17:42:00+01:00" pubdate data-updated="true">Sep 23<span>rd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>A few weeks ago I had the opportunity to attend a rather special event: the <a href="http://www.thedigitalsizzle.com/" title="Digital Sizzle Hackathon">Digital Sizzle Hackathon</a> in London. It was a rare, exhausting and stimulating weekend, and an experience that I&#8217;d thoroughly recommend to just about anyone.</p>
+
+<p>The weekend kicked off with an introduction to the event on the Friday evening. The event was hosted at Mozilla HQ in Leicester Square, a sumptuous workspace ideally situated. After a quick kick-off by the event organisers and an explanation from the API providers, the call for ideas began. Any fears of a collective creative block were soon put to rest as the line of speakers grew ever larger.</p>
+
+<div class="floatright">
+    <a href="http://www.flickr.com/photos/paul_clarke/7986249580/" class="notextdecoration">
+        <img src="http://farm9.staticflickr.com/8310/7986249580_78dd35f904.jpg" title="Kick off event"/>
+    </a>
+</div>
+
+
+<p>The ideas flowed thick and fast, with speakers appealing to their audience&#8217;s curiosity, their appetite for a challenge, and their love of lasers. The evening wrapped up with pizza and beers, over which the teams slowly coalesced around the popular ideas. The Digital Sizzle team were admirable at making sure nobody was left without a team.</p>
+
+<p>After a night&#8217;s sleep - or lack of it on my part thanks to a particularly ill-timed bout of insomnia - we reconvened at 9am to start work. Breakfast was laid on, and Mozilla&#8217;s absurdly sophisticated coffee machine revved into action (the only rule: if you were taught how to use it you then had to pass that knowledge on to at least one other person).</p>
+
+<p>Plans were formalised, brains were set a&#8217;stormin&#8217;, then slowly the exicted chatter subsided into the pitter patter of determined typing. At this point, dear reader, please be patient as I indulge in a momentary digression.</p>
+
+<div class="floatleft">
+    <a href="http://www.flickr.com/photos/paul_clarke/7989197960/" class="notextdecoration">
+        <img src="http://farm9.staticflickr.com/8452/7989197960_5da00a8e88_n_d.jpg" title="Locked in coder"/>
+    </a>
+</div>
+
+
+<p>As outlined in my previous post, I have only relatively recently crossed the line from &#8216;programmer as a day job&#8217; to &#8216;programmer as a vocation&#8217;. This distinction came mainly from the realisation that I was simply using the wrong language. After using Java for most of my career, switching to liberal JavaScript was akin to a plunge into crystal cool waters following a long sauna. This is not to say, of course, that JavaScript is a superior language to Java. I merely mean that I fall more on the side of Liberalism in <a href="https://plus.google.com/u/0/110981030061712822816/posts/KaSKeg4vQtz" title="Steve Yegge's Magic Mystery Bus">Steve Yegge&#8217;s scale of software ideology</a>, thus Java was simply a wrong fit for me.</p>
+
+<p>Despite my new found enthusiasm for programming however, I was initially hesitant when I heard about the hackathon. After all, I&#8217;ve only been coding full time in JavaScript for six months; surely the hackathon would be full of Linus-alikes and Wozniak-ians. I&#8217;d be left looking like a Sunday League footballer who&#8217;s stumbled into the Premier league.</p>
+
+<p>I mention this as I know that I am not alone in this; I have since spoken to a few people who have expressed similar feelings. In this post, my aim is to reassure you that such concerns are baseless. As I started coding away that first morning, it dawned on me that this was not the competitive environment I feared. Rather, the whole room crackled with the energy of creative minds doing what they love the most in its purest form; unhindered by estimates, unit tests, maintainability concerns, and all the other necessary but occasionally tiresome aspects of a professional developer&#8217;s worklife.</p>
+
+<div class="floatright">
+    <a href="http://www.flickr.com/photos/paul_clarke/7989357028/" class="notextdecoration">
+        <img src="http://farm9.staticflickr.com/8450/7989357028_481fc0e899_n.jpg" title="Burgers"/>
+    </a>
+</div>
+
+
+<p>For that weekend, we could immerse ourselves entirely on a project of our own volition, with not a care in the world. We had all the food, beer, and drink we could possibly want, and if you got stuck on an issue there was likely to be an expert within spitting distance who would be happy to help. Evening soon arrived, and with it burgers from the BBQ that put the Sizzle into Digital Sizzle. Hand on heart, one of the best burgers I&#8217;ve ever had. Despite my insomnia the previous night, it wasn&#8217;t till gone three in the morning that I found a quiet spot to lay my head. I drifted off to the sounds of some nightowls putting the world to rights in a deep philosophical debate.</p>
+
+<p>I awoke 4 hours later and groggily returned to my station, coffee in hand, and was instantly immersed again. After a few hours of flow, burritos were served for lunch and it dawned on us that we only had a few hours left to pull together all the disparate threads of our project. We furiously hacked away right up until the presentation, trying to put the finishing touches together but alas we didn&#8217;t manage to match up the audio with the visuals in time.</p>
+
+<p>After a marathon coding session, the reward of the project presentation was fantastic. Here were a few highlights that stuck out for me, although with 24 projects in total there are too many gems to list here:
+* Twitter killed my bunny - a game where a tweet-powered bunny tried to escape the &#8216;Negativity crusher&#8217;, which came slamming down when the sentiment from social networks turned sour.
+* Real weather - an arduino powered spectacle involving water pumped up and over corrugated plastic to simulate rain, a fan for the wind, and a lightbulb for the sun.
+* Karakilio - a breathtakingly ambitious spotify-powered karaoke app played over mobile phones. Unfortunately it succumbed to the curse of the demo, but it was a great idea.
+* Data necklace - the most beautiful example of geek love I&#8217;ve ever seen. A talented Romeo used a nearby laser cutting shop to create plastic necklaces containing, amongst other things, batons whose size were determined by the number of tweets about a recent celebrity death. It was a macabre but touching gift for his (no doubt slightly bemused) wife.</p>
+
+<div class="floatleft">
+    <a href="http://www.flickr.com/photos/paul_clarke/7992308349/" class="notextdecoration">
+        <img src="http://farm9.staticflickr.com/8446/7992308349_272315417d.jpg" title="Presentations"/>
+    </a>
+</div>
+
+
+<p>After seeing water pumps being tested in the shower at two in the morning, or hearing the occasional yells which constitued the testing for &#8220;Scream Ball&#8221;, it was really great to see these projects finished and in the flesh. The devils of presentation visited a few poor presenters, but on the whole it was inspiring and humbling to see what people had been able to create in a weekend. I also learned that it&#8217;s very important to put a bit of time and energy into the presentation of your project. Our team lead did a fantastic job given the circumstances, but whilst we&#8217;d spent the last precious moments feverishly hacking away, other teams had put together a great slideshow explaining their concept and what they were trying to achieve. It makes a big difference.</p>
+
+<p> On the whole, I found the hackathon to be a hugely rewarding and enjoyable experience. Regardless of your experience or perceived competence, I guarantee you will have a lot of fun, and it&#8217;ll reconnect you with the love of programming which thrust you into your career in the first place.</p>
+
+<p> All photo credits: <a href="http://paulclarke.com">Paul Clarke</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Alastair Lockie</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-23T17:42:00+01:00" pubdate data-updated="true">Sep 23<span>rd</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/social/'>social</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://larister.github.com/blog/2012/09/23/notes-from-a-hackathon/" data-via="larister" data-counturl="http://larister.github.com/blog/2012/09/23/notes-from-a-hackathon/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/04/15/from-java-to-javascript/" title="Previous Post: From Java to JavaScript">&laquo; From Java to JavaScript</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/10/27/sublime-text-2-configuration-plus-keyboard-shortcuts/" title="Next Post: Sublime Text 2: Configuration + Keyboard shortcuts">Sublime Text 2: Configuration + Keyboard shortcuts &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/24/starting-a-coding-meetup/">Starting a coding meetup</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/27/sublime-text-2-configuration-plus-keyboard-shortcuts/">Sublime Text 2: Configuration + Keyboard shortcuts</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/23/notes-from-a-hackathon/">Notes from a hackathon</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/04/15/from-java-to-javascript/">From Java to JavaScript</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/larister">@larister</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'larister',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("larister", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/larister" class="twitter-follow-button" data-show-count="false">Follow @larister</a>
+  
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Alastair Lockie -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

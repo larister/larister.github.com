@@ -1,0 +1,18 @@
+<div class="record">
+    <div>Customer Number: {{customerNumber}}</div>
+    <div>First Name: {{customerFirstName}}</div>
+    <div>Last Name: {{customerLastName}}</div>
+    <div>Box Type: {{boxType}}</div>
+    <div>Box Likes:
+        {{#boxLikes}}{{boxLikes}}{{/boxLikes}}
+        {{^boxLikes}}<span class="noValue">None</span>{{/boxLikes}}
+    </div>
+    <div>Box Dislikes:
+        {{#boxDislikes}}{{boxDislikes}}{{/boxDislikes}}
+        {{^boxDislikes}}<span class="noValue">None</span>{{/boxDislikes}}
+    </div>
+    <div>Box Extras:
+        {{#boxExtraLineItems}}{{boxExtraLineItems}}{{/boxExtraLineItems}}
+        {{^boxExtraLineItems}}<span class="noValue">None</span>{{/boxExtraLineItems}}
+    </div>
+</div>

@@ -1,111 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>Alastair Lockie</title>
-  <meta name="author" content="Alastair Lockie">
-
-  
-  <meta name="description" content="One of the best ways to increase your enjoyment as a coder is to attend a local meetup. You will make new friends and contacts with the same passions &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://larister.github.com/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="Alastair Lockie" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-  
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-36564455-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-
-
-</head>
-
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">Alastair Lockie</a></h1>
-  
-    <h2>Nuggets of JavaScript</h2>
-  
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:larister.github.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
+  <title><![CDATA[Alastair Lockie]]></title>
+  <link href="http://larister.github.com/atom.xml" rel="self"/>
+  <link href="http://larister.github.com/"/>
+  <updated>2013-06-15T20:20:33+01:00</updated>
+  <id>http://larister.github.com/</id>
+  <author>
+    <name><![CDATA[Alastair Lockie]]></name>
     
-      <h1 class="entry-title"><a href="/blog/2013/02/24/starting-a-coding-meetup/">Starting a Coding Meetup</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
   
-
-
-<time datetime="2013-02-24T07:37:00+00:00" pubdate data-updated="true">Feb 24<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>One of the best ways to increase your enjoyment as a coder is to attend a local meetup. You will make new friends and contacts with the same passions as you. You will swap stories of coding horrors and triumphs over a drink. You&#8217;ll learn the latest technologies and see them in action. Plus, it&#8217;s a great environment to test out your own ideas and public speaking skills in a safe, supportive environment.</p>
+  <entry>
+    <title type="html"><![CDATA[Starting a coding meetup]]></title>
+    <link href="http://larister.github.com/blog/2013/02/24/starting-a-coding-meetup/"/>
+    <updated>2013-02-24T07:37:00+00:00</updated>
+    <id>http://larister.github.com/blog/2013/02/24/starting-a-coding-meetup</id>
+    <content type="html"><![CDATA[<p>One of the best ways to increase your enjoyment as a coder is to attend a local meetup. You will make new friends and contacts with the same passions as you. You will swap stories of coding horrors and triumphs over a drink. You&#8217;ll learn the latest technologies and see them in action. Plus, it&#8217;s a great environment to test out your own ideas and public speaking skills in a safe, supportive environment.</p>
 
 <p>I have been attending <a href="http://asyncjs.com/">Async</a> in Brighton since I moved down here, and indeed it was one of the reasons I was keen on moving to the city. We&#8217;ve had some cracking speeches in the last year or so, from such luminaries as <a href="http://asyncjs.com/largescale/">Addy Osmani</a> and <a href="http://asyncjs.com/appcache/">Jake Archibald</a> to name just a couple. I&#8217;ve certainly learned a huge amount, and would recommend anybody in the vicinity with even a passing interest in JavaScript to pop down.</p>
 
@@ -160,42 +73,15 @@
 <hr />
 
 <p>That&#8217;s it, go forth and organise! Feel free to <a href="http://www.twitter.com/larister">get in touch</a> with me for any questions, guidance, or suggestions.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/27/sublime-text-2-configuration-plus-keyboard-shortcuts/">Sublime Text 2: Configuration + Keyboard Shortcuts</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-27T18:38:00+01:00" pubdate data-updated="true">Oct 27<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I recently did a talk at my local JavaScript meetup (<a href="http://asyncjs.com/">Async in Brighton</a>) about <a href="http://www.sublimetext.com/2">Sublime Text 2</a> and Chrome Dev Tools. Afterwards, I had a few requests to post about which plugins I use, and my preferences. I also plan on posting the video of the talk, but in the meantime here are my top tips:</p>
+  <entry>
+    <title type="html"><![CDATA[Sublime Text 2: Configuration + Keyboard shortcuts]]></title>
+    <link href="http://larister.github.com/blog/2012/10/27/sublime-text-2-configuration-plus-keyboard-shortcuts/"/>
+    <updated>2012-10-27T18:38:00+01:00</updated>
+    <id>http://larister.github.com/blog/2012/10/27/sublime-text-2-configuration-plus-keyboard-shortcuts</id>
+    <content type="html"><![CDATA[<p>I recently did a talk at my local JavaScript meetup (<a href="http://asyncjs.com/">Async in Brighton</a>) about <a href="http://www.sublimetext.com/2">Sublime Text 2</a> and Chrome Dev Tools. Afterwards, I had a few requests to post about which plugins I use, and my preferences. I also plan on posting the video of the talk, but in the meantime here are my top tips:</p>
 
 <h2>My Sublime Text 2 Plugins:</h2>
 
@@ -422,42 +308,15 @@ Win/Linux: <em>Ctrl + Alt + up/down</em></p>
 
 <p>Mac: <em>Cmd + mouse click</em><br/>
 Win/Linux: <em>Ctrl + mouse click</em></p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/09/23/notes-from-a-hackathon/">Notes From a Hackathon</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-09-23T17:42:00+01:00" pubdate data-updated="true">Sep 23<span>rd</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>A few weeks ago I had the opportunity to attend a rather special event: the <a href="http://www.thedigitalsizzle.com/" title="Digital Sizzle Hackathon">Digital Sizzle Hackathon</a> in London. It was a rare, exhausting and stimulating weekend, and an experience that I&#8217;d thoroughly recommend to just about anyone.</p>
+  <entry>
+    <title type="html"><![CDATA[Notes from a hackathon]]></title>
+    <link href="http://larister.github.com/blog/2012/09/23/notes-from-a-hackathon/"/>
+    <updated>2012-09-23T17:42:00+01:00</updated>
+    <id>http://larister.github.com/blog/2012/09/23/notes-from-a-hackathon</id>
+    <content type="html"><![CDATA[<p>A few weeks ago I had the opportunity to attend a rather special event: the <a href="http://www.thedigitalsizzle.com/" title="Digital Sizzle Hackathon">Digital Sizzle Hackathon</a> in London. It was a rare, exhausting and stimulating weekend, and an experience that I&#8217;d thoroughly recommend to just about anyone.</p>
 
 <p>The weekend kicked off with an introduction to the event on the Friday evening. The event was hosted at Mozilla HQ in Leicester Square, a sumptuous workspace ideally situated. After a quick kick-off by the event organisers and an explanation from the API providers, the call for ideas began. Any fears of a collective creative block were soon put to rest as the line of speakers grew ever larger.</p>
 
@@ -516,42 +375,15 @@ Win/Linux: <em>Ctrl + mouse click</em></p>
 <p> On the whole, I found the hackathon to be a hugely rewarding and enjoyable experience. Regardless of your experience or perceived competence, I guarantee you will have a lot of fun, and it&#8217;ll reconnect you with the love of programming which thrust you into your career in the first place.</p>
 
 <p> All photo credits: <a href="http://paulclarke.com">Paul Clarke</a></p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/04/15/from-java-to-javascript/">From Java to JavaScript</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-04-15T08:40:00+01:00" pubdate data-updated="true">Apr 15<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>
+  <entry>
+    <title type="html"><![CDATA[From Java to JavaScript]]></title>
+    <link href="http://larister.github.com/blog/2012/04/15/from-java-to-javascript/"/>
+    <updated>2012-04-15T08:40:00+01:00</updated>
+    <id>http://larister.github.com/blog/2012/04/15/from-java-to-javascript</id>
+    <content type="html"><![CDATA[<p>
 Firstly, hello and welcome to my blog. It’s been on my todo list to start this longer than ‘sort out the photos under the bed’, and that’s saying something. I’ve finally got round to starting it now for two reasons. Firstly, I recently read <a href="http://technicalblogging.com/why-every-professional-should-consider-blogging/">this excellent post</a> outlining the benefits of blogging, such as improved clarity of thought and more effective communication. Secondly, I have started on a new stage of my career, and I want to share my thoughts and experiences.
 </p>
 
@@ -619,134 +451,7 @@ My conversion came all the quicker thanks to the incredible community surroundin
 I know that these views are not universally shared, and for me this shift of focus simply brings my day to day job more in line with my personal style of programming. For others, Java is a great choice, but for me it felt like programming in a treacle-filled strait jacket. I’m looking forward to a simpler, faster, and in my opinion more elegant life of programming.
 </p>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2013/02/24/starting-a-coding-meetup/">Starting a coding meetup</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/10/27/sublime-text-2-configuration-plus-keyboard-shortcuts/">Sublime Text 2: Configuration + Keyboard shortcuts</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/09/23/notes-from-a-hackathon/">Notes from a hackathon</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/04/15/from-java-to-javascript/">From Java to JavaScript</a>
-      </li>
-    
-  </ul>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  
-  <a href="https://github.com/larister">@larister</a> on GitHub
-  
-  <script type="text/javascript">
-    $.domReady(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'larister',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-<section>
-  <h1>Latest Tweets</h1>
-  <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  <script type="text/javascript">
-    $.domReady(function(){
-      getTwitterFeed("larister", 4, false);
-    });
-  </script>
-  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
-  
-    <a href="http://twitter.com/larister" class="twitter-follow-button" data-show-count="false">Follow @larister</a>
-  
-</section>
-
-
-
-
-
-  
-</aside>
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Alastair Lockie -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
-
-
-
-
-
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-
-</body>
-</html>
+</feed>

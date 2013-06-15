@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Career | Alastair Lockie]]></title>
+  <link href="http://larister.github.com/blog/categories/career/atom.xml" rel="self"/>
+  <link href="http://larister.github.com/"/>
+  <updated>2013-06-15T20:20:33+01:00</updated>
+  <id>http://larister.github.com/</id>
+  <author>
+    <name><![CDATA[Alastair Lockie]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[From Java to JavaScript]]></title>
+    <link href="http://larister.github.com/blog/2012/04/15/from-java-to-javascript/"/>
+    <updated>2012-04-15T08:40:00+01:00</updated>
+    <id>http://larister.github.com/blog/2012/04/15/from-java-to-javascript</id>
+    <content type="html"><![CDATA[<p>
+Firstly, hello and welcome to my blog. It’s been on my todo list to start this longer than ‘sort out the photos under the bed’, and that’s saying something. I’ve finally got round to starting it now for two reasons. Firstly, I recently read <a href="http://technicalblogging.com/why-every-professional-should-consider-blogging/">this excellent post</a> outlining the benefits of blogging, such as improved clarity of thought and more effective communication. Secondly, I have started on a new stage of my career, and I want to share my thoughts and experiences.
+</p>
+
+
+<h2>My background</h2>
+
+
+<p>
+I’ve been a professional Java developer for five years now, and I’ve decided to take a bit of a gamble. I’m turning my back on the language and have accepted a job as a full-time JavaScript developer. To those that still view JavaScript as a toy language which isn’t for serious programmers, this may seem like a bit of a foolish life decision.
+</p>
+
+
+<p>
+I must confess, if you’d asked me a couple of years ago I may well have thought the same. Even up until a few months ago I hadn’t seriously entertained the idea of giving up Java. Ignoring brief educational forays into Visual Basic, ActionScript and even ADA, Java is the first language I truly knew. From BlueJ at University through to Technical Lead on a suite of web apps in my previous company, I’d always thought of myself as a Java developer. I feel <a href="http://en.wikipedia.org/wiki/Flow_(psychology)">a real sense of flow</a> when I’m flying through an inheritance hierarchy refactor, the NetBeans keyboard shortcuts burned into my finger muscle memory.
+</p>
+
+
+<p>
+There is still a part of me that considers Java to be a ‘proper’ programming language compared to JavaScript. The challenges of multi-threading, the security of strong typing, and the maturity of frameworks such as Spring and Hibernate are not easy to turn one’s back on. Java is a very established and well-respected language, and I believe that despite the growth of languages such as Ruby and Python, it still has many years ahead of it.
+</p>
+
+
+<h2>The Ascendance of JavaScript</h2>
+
+
+<p>
+In contrast, although JavaScript first appeared in Netscape 2 way back in 1995, it wasn’t until the appearance of rich web applications like GMail and the proliferation of AJAX a decade later that people started to sit up and take notice. 
+</p>
+
+
+<p>
+For me, there were three main reasons why JavaScript is well worth considering as a primary language. Firstly, and most importantly, there is a <a href="http://vimeo.com/36579366">more direct connection with the thing I’m creating</a>. Coding with Java can be deeply rewarding, but you don’t really get to see very much. Aside from the green bars of passing tests, or the steady stream of logs in the console, positive feedback needs to come from the internal knowledge of a job well done. Coding in JavaScript, on the other hand, usually involves active changes to the DOM - changes that you can see and interact with, changes that feel more tangible somehow. I know that this is a personal preference, but for me this feedback is important. 
+</p>
+
+
+<p>
+The second aspect to JavaScript development that tempted me across is the rapid evolution of the language. Despite the appearance of new frameworks like Play, and new features to the language itself with version updates, Java felt quite slow moving to me. JavaScript, by contrast, is the top language on github (at the time of writing), and it shows. There seems to be a new testing framework or MV* framework cropping up each month, and that’s not to mention the lightning pace of Node.js’ evolution. The buzz of a language on the move is both exciting and addictive - go to any JavaScript conference and you’ll see what I mean.
+</p>
+
+
+<p>
+Finally, there is the sheer ubiquity of the language. There is a JavaScript interpreter on almost every web-enabled device. What started out as a quick &amp; dirty language knocked together by Brendan Eich in just 10 days has become the world’s most widely supported programming language. <a href="https://www.destroyallsoftware.com/talks/wat">JavaScript might have it’s problems</a> but I don’t see it going anywhere anytime soon.
+</p>
+
+
+<h2>jQuery - the gateway drug</h2>
+
+
+<p>
+Like many, my introduction into the pleasures of JavaScript came through the warm and friendly world of <a href="http://www.jquery.com">jQuery</a>. There were other libraries before jQuery to aid with DOM manipulation (traditionally the most painful and inconsistent aspect of JavaScript development), but jQuery absolutely nailed it.
+</p>
+
+
+<p>
+jQuery revolutionised front-end development for a great many people, but I think everybody who uses it heavily hits a point where they come to realise that learning the library alone and not the language just won’t cut it. This point came for me whilst I was devouring the excellent ‘jQuery in Action’, and read the Appendix which outlined some core JavaScript fundamentals such as closures and object literals. After countless recommendations, I got hold of a copy of Douglas Crockford’s JavaScript - the Good Parts. When I found myself choosing to spend a sunny afternoon sitting up on the Surrey Hills with a beer and said book, I realised that I was really starting to fall for this language.
+</p>
+
+
+<p>
+My conversion came all the quicker thanks to the incredible community surrounding jQuery and JavaScript. I had barely used Twitter up until I read a blog post by <a href="http://www.twitter.com/rem">@rem</a> on how to recognise a poorly written jQuery plugin and decided to follow him; same story with Paul Irish’s now famous <a href="http://vimeo.com/12529436">‘10 things I learned from the jQuery source’</a> video. Pretty soon, I was following more and more JavaScript luminaries, and I finally discovered what people meant when they quote Twitter as a great resource for learning. I now follow over 300 people, and most of them are JavaScript developers.
+</p>
+
+
+<p>
+I know that these views are not universally shared, and for me this shift of focus simply brings my day to day job more in line with my personal style of programming. For others, Java is a great choice, but for me it felt like programming in a treacle-filled strait jacket. I’m looking forward to a simpler, faster, and in my opinion more elegant life of programming.
+</p>
+
+]]></content>
+  </entry>
+  
+</feed>
