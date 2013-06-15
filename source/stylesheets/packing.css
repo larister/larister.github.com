@@ -11,7 +11,11 @@
     margin: 20px 0;
 }
 
-.total{
+.total {
     margin: 20px 0;
     font-weight: bold;
+}
+
+.noValue {
+    font-style: italic;
 }

@@ -1,5 +1,5 @@
 <div class="page-break"></div>
-<h2>Round Totals for {{roundName}}</h2>
+<h2>Round Totals for {{deliveryRoute}}</h2>
 <div class="total">
     {{#boxTotals}}
     <div>{{total}} x {{item}}</div>

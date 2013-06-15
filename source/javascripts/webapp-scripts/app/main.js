@@ -22,20 +22,23 @@ require([
         return alert('The File APIs are not fully supported in this browser.');
     }
 
-    function parseHeadings(headingsLine){
+    function validateHeadings(headingsLine){
         var headings = $.csv.toArray(headingsLine);
-        var positions = {};
+        var missingFields = [];
 
         _(requiredFields).each(function(field){
             var index = headings.indexOf(field);
 
             if(index === -1){
-                throw new Error('Could not find required header: ' + field);
+                missingFields.push(field);
             }
-            positions[field] = index;
         });
 
-        return positions;
+        return missingFields;
+    }
+
+    function variablify(str){
+        return str.replace(/\s/g, '').replace(/^./, function(c) { return c.toLowerCase(); });
     }
 
     function aggregateBoxExtras(boxExtras){
@@ -77,11 +80,11 @@ require([
     function calculateTotals(records){
         // Yes we're doing two loops here. No I don't care, it makes things a lot nicer.
         var boxTypes = _(records).countBy(function(record) { return record.boxType; });
-        var extras = _(records).pluck('boxExtras');
+        var extras = _(records).pluck('boxExtraLineItems');
         var exraTotals = aggregateBoxExtras(extras);
 
         return {
-            roundName: records[0].roundName, // Pluck out the round name from the first record (they're all the same)
+            deliveryRoute: records[0].deliveryRoute, // Pluck out the round name from the first record (they're all the same)
             boxTotals: formatTotals(boxTypes),
             extraTotals: formatTotals(exraTotals)
         };
@@ -100,36 +103,31 @@ require([
 
     function parseContents(result){
         var lines = result.split('\n');
-        var headingPositions;
-        var records = [];
+        var records;
+        var missingFields;
 
         if(!lines.length){
-            throw new Error('No data found in file, not even the headers');
+            return alertify.alert('No data found in file, not even the headers');
         } else if (lines.length === 1){
-            throw new Error('No records found in file');
+            return alertify.alert('No records found in file');
         }
 
-        headingPositions = parseHeadings(lines[0]);
+        missingFields = validateHeadings(lines[0]);
 
-        _(lines.slice(1)).chain()
-            .reject(function(item) { return _(item).isEmpty(); })
-            .each(function(line){
-                var fields = $.csv.toArray(line);
-                var record = {};
+        if(missingFields.length){
+            return alertify.alert('Could not find the following required information: \n' + missingFields.join(', '));
+        }
 
-                record.roundName = fields[headingPositions[ROUND_NAME]];
+        records = $.csv.toObjects(result);
 
-                record.id = fields[headingPositions[CUSTOMER_NUM]];
-                record.firstName = fields[headingPositions[CUSTOMER_FIRSTNAME]];
-                record.lastName = fields[headingPositions[CUSTOMER_LASTNAME]];
-                record.boxType = fields[headingPositions[BOX_TYPE]];
-                record.boxLikes = fields[headingPositions[BOX_LIKES]];
-                record.boxDislikes = fields[headingPositions[BOX_DISLIKES]];
-                record.boxExtras = fields[headingPositions[BOX_EXTRAS]];
-
-                records.push(record);
-        });
         console.log(records);
+
+        records = _(records).map(function(record) {
+            return _(record).reduce(function(memo, value, key) {
+                memo[variablify(key)] = value;
+                return memo;
+            }, {});
+        });
 
         return {
             records: records,
@@ -138,10 +136,9 @@ require([
     }
 
     function render(data){
-        var output = [],
-            $records = $('#records');
+        var $records = $('#records');
 
-        $records.html('<h2>Customer Details for ' + data.records[0].roundName + '</h2>');
+        $records.html('<h2>Customer Details for ' + data.records[0].deliveryRoute + '</h2>');
 
         _(data.records).each(function(record){
             $records.append(packingRecordTemplate(record));
@@ -166,7 +163,7 @@ require([
             reader.onload = (function(){
                 return function(e){
                     if(!e || !e.target || !e.target.result){
-                        throw new Error('Could not find any data');
+                        return alertify.alert('Could not find any data');
                     }
 
                     render(parseContents(e.target.result));
