@@ -1,8 +1,11 @@
-$(function() {
-
-    _.templateSettings = _(_.templateSettings).extend({
-        interpolate : /\{\{(.+?)\}\}/g
-    });
+require([
+    'mustache!packingRecord',
+    'mustache!packingTotals'
+], function(
+    packingRecordTemplate,
+    packingTotalsTemplate
+){
+    'use strict';
 
     var ROUND_NAME = 'Delivery Route';
     var CUSTOMER_NUM = 'Customer Number';
@@ -75,21 +78,30 @@ $(function() {
         // Yes we're doing two loops here. No I don't care, it makes things a lot nicer.
         var boxTypes = _(records).countBy(function(record) { return record.boxType; });
         var extras = _(records).pluck('boxExtras');
-
-        console.log(boxTypes);
+        var exraTotals = aggregateBoxExtras(extras);
 
         return {
             roundName: records[0].roundName, // Pluck out the round name from the first record (they're all the same)
-            boxTotals: boxTypes,
-            extraTotals: aggregateBoxExtras(extras)
+            boxTotals: formatTotals(boxTypes),
+            extraTotals: formatTotals(exraTotals)
         };
+    }
+
+    function formatTotals(totals){
+        var formattedTotals = _(totals).map(function(value, key){
+            return {
+                'total': value,
+                'item': key
+            };
+        });
+
+        return formattedTotals;
     }
 
     function parseContents(result){
         var lines = result.split('\n');
         var headingPositions;
         var records = [];
-        var totals;
 
         if(!lines.length){
             throw new Error('No data found in file, not even the headers');
@@ -126,35 +138,15 @@ $(function() {
     }
 
     function render(data){
-        var output = [];
-        var recordTemplate = _.template(
-            '<div class="record">' +
-            '<div>Customer Number: {{id}}</div>' +
-            '<div>First Name: {{firstName}}</div>' +
-            '<div>Last Name: {{lastName}}</div>' +
-            '<div>Box Type: {{boxType}}</div>' +
-            '<div>Box Likes: {{boxLikes}}</div>' +
-            '<div>Box Dislikes: {{boxDislikes}}</div>' +
-            '<div>Box Extras: {{boxExtras}}</div>' +
-            '</div>'
-        );
-        var boxTotalsTemplate = _.template(
-            '<div class="page-break"></div>' +
-            '<h2>Round Totals for {{roundName}}</h2>' +
-            '<div class="total">' +
-            '<% _.each(boxTotals, function(value, key) { %> <div>{{value}} x {{key}}</div> <% }); %>' +
-            '</div>' +
-            '<div class="total">' +
-            '<% _.each(extraTotals, function(value, key) { %> <div>{{value}} x {{key}}</div> <% }); %>' +
-            '</div>'
-        );
+        var output = [],
+            $records = $('#records');
+
+        $records.html('<h2>Customer Details for ' + data.records[0].roundName + '</h2>');
 
         _(data.records).each(function(record){
-            output.push(recordTemplate(record));
+            $records.append(packingRecordTemplate(record));
         });
-        output.push(boxTotalsTemplate(data.totals));
-
-        $('#records').html('<h2>Customer Details for ' + data.records[0].roundName + '</h2>').append(output.join(''));
+        $records.append(packingTotalsTemplate(data.totals));
     }
 
     function handleFileSelect(e) {
@@ -171,7 +163,7 @@ $(function() {
 
             var reader = new FileReader();
 
-            reader.onload = (function(theFile){
+            reader.onload = (function(){
                 return function(e){
                     if(!e || !e.target || !e.target.result){
                         throw new Error('Could not find any data');
@@ -187,4 +179,5 @@ $(function() {
     }
 
     $('#files').on('change', handleFileSelect);
+
 });

@@ -1,0 +1,9 @@
+<div class="record">
+    <div>Customer Number: {{id}}</div>
+    <div>First Name: {{firstName}}</div>
+    <div>Last Name: {{lastName}}</div>
+    <div>Box Type: {{boxType}}</div>
+    <div>Box Likes: {{boxLikes}}</div>
+    <div>Box Dislikes: {{boxDislikes}}</div>
+    <div>Box Extras: {{boxExtras}}</div>
+</div>
