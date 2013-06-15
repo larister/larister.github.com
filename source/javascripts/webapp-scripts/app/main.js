@@ -7,21 +7,23 @@ require([
 ){
     'use strict';
 
-    var ROUND_NAME = 'Delivery Route';
-    var CUSTOMER_NUM = 'Customer Number';
-    var CUSTOMER_FIRSTNAME = 'Customer First Name';
-    var CUSTOMER_LASTNAME = 'Customer Last Name';
-    var BOX_TYPE = 'Box Type';
-    var BOX_LIKES = 'Box Likes';
-    var BOX_DISLIKES = 'Box Dislikes';
-    var BOX_EXTRAS = 'Box Extra Line Items';
-    var requiredFields = [ROUND_NAME, CUSTOMER_NUM, CUSTOMER_FIRSTNAME, CUSTOMER_LASTNAME, BOX_TYPE, BOX_LIKES, BOX_DISLIKES, BOX_EXTRAS];
+    var requiredFields = [
+        'Delivery Route',
+        'Customer Number',
+        'Customer First Name',
+        'Customer Last Name',
+        'Box Type',
+        'Box Likes',
+        'Box Dislikes',
+        'Box Extra Line Items'
+    ];
 
     // Check for the various File API support.
     if (!window.File || !window.FileReader || !window.FileList || !window.Blob) {
         return alert('The File APIs are not fully supported in this browser.');
     }
 
+    // Ensure the correct headings are included
     function validateHeadings(headingsLine){
         var headings = $.csv.toArray(headingsLine);
         var missingFields = [];
@@ -37,7 +39,9 @@ require([
         return missingFields;
     }
 
-    function variablify(str){
+    // Convert string to variable-style camel case -> Customer First Name -> customerFirstName
+    // NOTE: expects capitalised string
+    function camelCase(str){
         return str.replace(/\s/g, '').replace(/^./, function(c) { return c.toLowerCase(); });
     }
 
@@ -90,6 +94,7 @@ require([
         };
     }
 
+    // Convert the totals into template-friendly format, i.e. '{boxA: 12}' -> {item: 'boxA', total: '12'}
     function formatTotals(totals){
         var formattedTotals = _(totals).map(function(value, key){
             return {
@@ -122,9 +127,11 @@ require([
 
         console.log(records);
 
+
+        // Convert the record keys to 'variable' style
         records = _(records).map(function(record) {
             return _(record).reduce(function(memo, value, key) {
-                memo[variablify(key)] = value;
+                memo[camelCase(key)] = value;
                 return memo;
             }, {});
         });

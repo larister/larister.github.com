@@ -26,6 +26,7 @@
     [
         "define",
         "require",
+        "requirejs",
         "alert",
         "confirm",
         "_",
