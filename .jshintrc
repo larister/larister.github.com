@@ -20,7 +20,7 @@
     "nonew": true,
     "maxdepth": 3,
     "undef": true,
-    "unused": true
+    "unused": true,
 
     "predef":
     [
@@ -35,6 +35,7 @@
         "Backbone",
         "async",
         "moment",
+        "alertify",
         "before",
         "after",
         "beforeEach",
