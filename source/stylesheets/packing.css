@@ -7,6 +7,10 @@
     .page-break { display: block; page-break-before: always; }
 }
 
+.controls .csvFiles{
+    line-height: 10px;
+}
+
 .record {
     margin: 20px 0;
 }
