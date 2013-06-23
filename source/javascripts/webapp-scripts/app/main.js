@@ -1,10 +1,12 @@
 require([
-    'app/utility/packingSheetConverter',
+    'app/utility/totalsCalculator',
+    'app/utility/csvParser',
     'mustache!packingRecord',
     'mustache!packingTotals',
     'mustache!alertMessage'
 ], function(
-    packingSheetConverter,
+    totalsCalculator,
+    csvParser,
     packingRecordTemplate,
     packingTotalsTemplate,
     alertMessageTemplate
@@ -24,16 +26,16 @@ require([
     }
 
 
-    function render(data){
+    function renderPackingSheet(records, totals){
         var $records = $('#records');
 
-        $records.html('<h2>Customer Details for ' + data.records[0].deliveryRoute + '</h2>');
+        $records.append('<h2>Customer Details for ' + records[0].deliveryRoute + '</h2>');
 
-        _(data.records).each(function(record){
+        _(records).each(function(record){
             $records.append(packingRecordTemplate(record));
         });
 
-        $records.append(packingTotalsTemplate(data.totals));
+        $records.append(packingTotalsTemplate(totals));
     }
 
     function handleFileSelect(e) {
@@ -55,16 +57,18 @@ require([
                     if(!e || !e.target || !e.target.result){
                         return displayAlert('Could not find any data');
                     }
-                    var data = packingSheetConverter.parseContents(e.target.result);
+                    csvParser.parse(e.target.result, function(error, records){
+                        if(error){
+                            return displayAlert(error);
+                        }
+                        var packingTotals = totalsCalculator.calculateTotals(records);
 
-                    if(data.error){
-                        return displayAlert(data.error);
-                    }
+                        renderPackingSheet(records, packingTotals);
 
-                    render(data);
+                    });
 
                 };
-            })(f);
+            })();
 
             reader.readAsText(f);
         });
