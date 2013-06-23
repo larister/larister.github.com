@@ -10,3 +10,4 @@
     <div>{{total}} x {{item}}</div>
     {{/extraTotals}}
 </div>
+<div class="page-break"></div>

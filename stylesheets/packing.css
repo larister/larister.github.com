@@ -3,8 +3,12 @@
 }
 
 @media print {
-    .controls { display: none; }
+    .noprint { display: none; }
     .page-break { display: block; page-break-before: always; }
+}
+
+.controls .csvFiles{
+    line-height: 10px;
 }
 
 .record {
