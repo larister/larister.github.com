@@ -61,7 +61,7 @@
                     name = split[0],
                     rootUrl = (config.rootUrl || (config.baseUrl + '/templates/')).replace(/\/\//g, '/'),
                     ext = config.templateExtension || '.template',
-                    fullName = rootUrl + name + ext;
+                    fullName = rootUrl + name + ext + '?v='+config.urlArgs;
 
                 if(!config.isBuild && rendererCache[name]){
                     callback(rendererCache[name]);

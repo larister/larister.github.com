@@ -1,6 +1,6 @@
 <div class="row">
     <div class="span12 alert alert-error">
       <button type="button" class="close" data-dismiss="alert">&times;</button>
-      <strong>Error!</strong> {{errorMessage}}
+      <strong>Error{{#fileName}} in file {{fileName}}{{/fileName}}:</strong> {{errorMessage}}
     </div>
 </div>

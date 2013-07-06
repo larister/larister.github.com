@@ -51,17 +51,38 @@ define(function(){
             return formattedTotals;
         },
 
-        calculateTotals: function(records){
+        calculateRoundTotals: function(records){
             // Yes we're doing two loops here. No I don't care, it makes things a lot nicer.
             var boxTypes = _(records).countBy(function(record) { return record.boxType; });
             var extras = _(records).pluck('boxExtraLineItems');
-            var exraTotals = this.aggregateBoxExtras(extras);
+            var extraTotals = this.aggregateBoxExtras(extras);
 
             return {
                 deliveryRoute: records[0].deliveryRoute, // Pluck out the round name from the first record (they're all the same)
-                boxTotals: this.formatTotals(boxTypes),
-                extraTotals: this.formatTotals(exraTotals)
+                boxTotals: boxTypes,
+                extraTotals: extraTotals
             };
+        },
+
+        calculateGrandTotals: function(totals) {
+            var grandTotals = _(totals).reduce(function(memo, roundTotals) {
+                _(roundTotals.boxTotals).each(function(total, boxName) {
+                    memo.boxTotals[boxName] = memo.boxTotals[boxName] ? memo.boxTotals[boxName] + total : total;
+                });
+                _(roundTotals.extraTotals).each(function(total, extraName) {
+                    memo.extraTotals[extraName] = memo.extraTotals[extraName] ? memo.extraTotals[extraName] + total : total;
+                });
+                return memo;
+            }, {
+                boxTotals: {},
+                extraTotals: {}
+            });
+
+            return grandTotals;
+        },
+
+        calculateTotals: function(rounds){
+            return _(rounds).map(this.calculateRoundTotals, this);
         }
 
     };
