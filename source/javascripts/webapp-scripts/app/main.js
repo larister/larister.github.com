@@ -1,78 +1,126 @@
 require([
     'app/utility/totalsCalculator',
     'app/utility/csvParser',
+    // 'libs/tabler/tabler',
     'mustache!packingRecord',
     'mustache!packingTotals',
     'mustache!alertMessage'
 ], function(
     totalsCalculator,
     csvParser,
+    // tabler,
     packingRecordTemplate,
     packingTotalsTemplate,
     alertMessageTemplate
 ){
     'use strict';
 
-    // Check for the various File API support.
-    if (!window.File || !window.FileReader || !window.FileList || !window.Blob) {
-        return alert('The File APIs are not fully supported in this browser.');
+    var $results = $('#results');
+
+    function displayAlert(errorMessage, fileName){
+        $('.notificationContainer').append(alertMessageTemplate({
+            fileName: fileName,
+            errorMessage: errorMessage
+        }));
     }
 
-    function displayAlert(errorMessage){
-        $('.notificationContainer .alert-error').remove();
-
-        $('.notificationContainer').append(alertMessageTemplate({errorMessage: errorMessage}));
+    // Check for the various File API support.
+    if (!window.File || !window.FileReader || !window.FileList || !window.Blob) {
+        displayAlert('This browser is not supported. Please use Google Chrome or Mozilla Firefox');
         return false;
     }
 
+    // function renderDeliverySheet(records, collectionContact){
+    //     var table = tabler.create([
+    //         {field: 'firstName', name: 'First Name'},
+    //         {field: 'lastName', name: 'Last Name'},
+    //         {field: 'customerNumber', name: 'Customer Number'},
+    //         {field: 'address', name: 'Customer Number'},
+    //     ]);
 
-    function renderPackingSheet(records, totals){
-        var $records = $('#records');
+    //     $results.append('<h2>Delivery Sheet for ' + records[0].deliveryRoute + '</h2>');
+    // }
 
-        $records.append('<h2>Customer Details for ' + records[0].deliveryRoute + '</h2>');
+    function renderPackingSheet(rounds){
+        _(rounds).each(function(records){
+            $results.append('<div class="page-break"></div>');
+            $results.append('<h2>Customer Details for ' + records[0].deliveryRoute + '</h2>');
 
-        _(records).each(function(record){
-            $records.append(packingRecordTemplate(record));
+            _(records).each(function(record){
+                $results.append(packingRecordTemplate(record));
+            });
+        });
+    }
+
+    function renderTotals(totals){
+        _(totals).each(function(roundTotals){
+            var roundTotalsHTML = packingTotalsTemplate({
+                heading: 'Round Totals for ' + roundTotals.deliveryRoute,
+                boxes: totalsCalculator.formatTotals(roundTotals.boxTotals),
+                extras: totalsCalculator.formatTotals(roundTotals.extraTotals)
+            });
+
+            $results.append(roundTotalsHTML);
+        });
+    }
+
+    function renderGrandTotals(grandTotals){
+        var grandTotalsHTML = packingTotalsTemplate({
+            heading: 'Grand Totals',
+            boxes: totalsCalculator.formatTotals(grandTotals.boxTotals),
+            extras: totalsCalculator.formatTotals(grandTotals.extraTotals)
         });
 
-        $records.append(packingTotalsTemplate(totals));
+        $results.append('<div class="page-break"></div>');
+        $results.append(grandTotalsHTML);
+    }
+
+    function onAllRoundsLoaded(rounds){
+        var totals = totalsCalculator.calculateTotals(rounds);
+
+        renderTotals(totals);
+
+        if(rounds.length > 1){
+            renderGrandTotals(totalsCalculator.calculateGrandTotals(totals));
+        }
+
+        renderPackingSheet(rounds);
     }
 
     function handleFileSelect(e) {
-        var files = e.target.files; // FileList object
+        var files = e.target.files;
+        var numberOfFiles = files.length;
+        var rounds = [];
 
-        // files is a FileList of File objects. List some properties.
-        var output = [];
-
-        _(files).each(function(f){
-            output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
-            f.size, ' bytes, last modified: ',
-            f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
-                '</li>');
-
+        _(files).each(function(file){
             var reader = new FileReader();
 
-            reader.onload = (function(){
+            reader.onload = (function(file){
+
                 return function(e){
+                    var fileName = escape(file.name);
+
                     if(!e || !e.target || !e.target.result){
-                        return displayAlert('Could not find any data');
+                        return displayAlert('Could not find any data', fileName);
                     }
                     csvParser.parse(e.target.result, function(error, records){
                         if(error){
-                            return displayAlert(error);
+                            return displayAlert(error, fileName);
                         }
-                        var packingTotals = totalsCalculator.calculateTotals(records);
 
-                        renderPackingSheet(records, packingTotals);
+                        rounds.push(records);
+
+                        if(--numberOfFiles === 0){
+                            onAllRoundsLoaded(rounds);
+                        }
 
                     });
-
                 };
-            })();
+            })(file);
 
-            reader.readAsText(f);
+            reader.readAsText(file);
         });
-        $('#fileDataList').html('<ul>' + output.join('') + '</ul>');
+
     }
 
     $('#files').on('change', handleFileSelect);

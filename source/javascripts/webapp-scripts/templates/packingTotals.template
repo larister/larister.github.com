@@ -1,13 +1,11 @@
-<div class="page-break"></div>
-<h2>Round Totals for {{deliveryRoute}}</h2>
+<h2>{{heading}}</h2>
 <div class="total">
-    {{#boxTotals}}
+    {{#boxes}}
     <div>{{total}} x {{item}}</div>
-    {{/boxTotals}}
+    {{/boxes}}
 </div>
 <div class="total">
-    {{#extraTotals}}
+    {{#extras}}
     <div>{{total}} x {{item}}</div>
-    {{/extraTotals}}
+    {{/extras}}
 </div>
-<div class="page-break"></div>
