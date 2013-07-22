@@ -49,7 +49,7 @@ MicroEvent.prototype    = {
  *
  * @param {Object} the object which will support MicroEvent
 */
-MicroEvent.mixin    = function(destObject){
+MicroEvent.mixin = function(destObject){
     var props   = ['bind', 'unbind', 'trigger'];
     for(var i = 0; i < props.length; i ++){
         destObject.prototype[props[i]]  = MicroEvent.prototype[props[i]];
@@ -59,10 +59,16 @@ MicroEvent.mixin    = function(destObject){
 
     // Work with AMD or plain-ol script tag
     if(typeof define === 'function' && define.amd){
-        // If window.jQuery or window._ are not defined, then assume we're using AMD modules
-        define(['jquery', 'underscore'], function($, _){
-            return factory($ || root.jQuery, _ || root._, MicroEvent);
-        });
+        if(root.jQuery && root._){
+            define(function(){
+                return factory(root.jQuery, root._, MicroEvent);
+            });
+        } else {
+            // If window.jQuery or window._ are not defined, then assume we're using AMD modules
+            define(['jquery', 'underscore'], function($, _){
+                return factory($ || root.jQuery, _ || root._, MicroEvent);
+            });
+        }
     }else{
         root.tabler = factory(root.jQuery, root._, MicroEvent);
     }

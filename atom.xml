@@ -4,7 +4,7 @@
   <title><![CDATA[Alastair Lockie]]></title>
   <link href="http://larister.github.com/atom.xml" rel="self"/>
   <link href="http://larister.github.com/"/>
-  <updated>2013-07-06T08:58:34+01:00</updated>
+  <updated>2013-07-22T22:13:38+01:00</updated>
   <id>http://larister.github.com/</id>
   <author>
     <name><![CDATA[Alastair Lockie]]></name>
@@ -12,6 +12,137 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Web Components will be a Pretty Big Deal]]></title>
+    <link href="http://larister.github.com/blog/2013/07/22/web-components-will-be-a-pretty-big-deal/"/>
+    <updated>2013-07-22T21:48:00+01:00</updated>
+    <id>http://larister.github.com/blog/2013/07/22/web-components-will-be-a-pretty-big-deal</id>
+    <content type="html"><![CDATA[<p>Last Wednesday I was lucky enough to attend a fascinating evening at Google, London. <a href="https://twitter.com/glennjones">Glenn Jones</a> kindly invited me to join him at an event on <a href="http://www.w3.org/TR/2013/WD-components-intro-20130606/">Web Components</a> and <a href="http://www.polymer-project.org/">Polymer</a>.</p>
+
+<p>The Polymer team have been quietly working on their baby for the last three years, but it is only starting to emerge into the limelight now.</p>
+
+<h1>Web Components</h1>
+
+<p>The core philosophy behind Web Components is to make markup meaningful again. They want to give you the ability to build your own HTML elements. For the most obvious example of this, fire up Google Chrome and add an <code>&lt;input type="date"&gt;</code> tag:</p>
+
+<p><input type="date"></p>
+
+<p>See how it&#8217;s rendered? It&#8217;s a fully functional widget, with the ability to increment/decrement values and even open up a calendar view.</p>
+
+<p>Right click and inspect element. What do you see? Still the same old input tag. Now click on the little cog at the bottom right of the dev tools and click on &#8216;Show Shadow DOM&#8217;. Reboot the dev tools and behold! Now you have a grey <code>#document-fragment</code> within the input tag which shows you all the inner workings of the element.</p>
+
+<p>This is a perfect example of a custom element. It has its own encapsulated styling and JavaScript behaviour, and is entirely reusable. Web Components releases this awesome power from the clutches of the browser vendors and opens it up to all.</p>
+
+<h1>Polymer</h1>
+
+<p>So what is Polymer? It is Google&#8217;s implementation of Web Components, and it sits on a collection of polyfills which make the technology possible on today&#8217;s browsers. This collection of polyfills is called &#8216;platform.js&#8217;, and includes:</p>
+
+<ul>
+<li>Custom Elements</li>
+<li>Shadow DOM</li>
+<li>HTML Imports</li>
+<li>Model Driven Views</li>
+</ul>
+
+
+<p>It also includes a couple of polyfills for Web Animations and Pointer Events. These aren&#8217;t directly related to Web Components, but are still great shims in their own right and show that the Polymer team are working hard to bring the future of the web ever closer. Each polyfill can also be included/excluded as needed. As with all polyfills, they will become less and less necessary over time as standards are implemented.</p>
+
+<p>Let&#8217;s take a quick gander at each of these polyfills for Web Components.</p>
+
+<h2>Custom Elements</h2>
+
+<p>This is what allows you to register your own HTML element. Ever wanted to have your own <code>&lt;this-guy&gt;</code> tag with two <code>&lt;thumb&gt;</code> tags? Now you can. What&#8217;s more, your <code>&lt;this-guy&gt;</code> tag can have it&#8217;s own fully encapsulated JavaScript.</p>
+
+<p>As this JavaScript is not exposed to the outside world, there are some interesting side effects. Notably, inline handlers such as click may come back into fashion. Before you gasp, think about the original reasoning behind separating out behaviour from the DOM. It was (at least partly) to avoid the use of global functions. But when your code is isolated in its own little sandbox, this concern melts away. What&#8217;s more, you can do away with the messy business of adding and removing event listeners.</p>
+
+<p>The same goes for CSS as well, no more big long selectors to drill down through the tree to the exact element you want. You are able to allow the outside world to style some or all of your custom element, but the choice and control is yours. For me, this encapsulation of JS and CSS is the most revolutionary part of Web Components, and I am deeply excited about it.</p>
+
+<h2>Shadow DOM</h2>
+
+<p>The Shadow DOM encapsulates the innards of your custom element and just exposes a nice clean tag for you to plonk on your page. This tag can even have child nodes; the contents of which can be accessed and mashed into your custom element. Check out Google&#8217;s example:</p>
+
+<p>What the user writes:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;my-custom-element&gt;
+</span><span class='line'>  &lt;q&gt;Hello World&lt;/q&gt;
+</span><span class='line'>&lt;/my-custom-element&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Your Shadow DOM:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;shadow-root&gt;
+</span><span class='line'>  &lt;span&gt;People say: &lt;content&gt;&lt;/content&gt;&lt;/span&gt;
+</span><span class='line'>&lt;/shadow-root&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The resulting HTML:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;my-custom-element&gt;
+</span><span class='line'>  &lt;span&gt;People say: &lt;q&gt;Hello World&lt;/q&gt;&lt;/span&gt;
+</span><span class='line'>&lt;/my-custom-element&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Dumping out the content of the my-custom-element tag is the most simple example, but it is a very flexible framework. You can use CSS selectors to grab out exactly the parts you want and insert them where appropriate.</p>
+
+<p>Of course, these reusable and encapsulated elements can be compounded to make ever more complex elements, until you have an entire webapp just represented as <code>&lt;my-webapp&gt;</code>. Although this might seem anathema to some, remember that entire webapps are currently being built with no elements on the page whatsoever, in arbritrary ways. The Shadow DOM and custom elements at least provide standardisation, plus the ability to drill down into the building blocks using Dev Tools.</p>
+
+<h2>HTML Imports</h2>
+
+<p>So you&#8217;ve got your nice new shiny element. It is defined in its own file, with a script tag and styles inside. Now how to get the thing into your page? Unsurprisingly, it&#8217;s using the new HTML Import functionality. As you&#8217;d expect, this is as simple as adding a script or a stylesheet to a page; indeed it uses the <code>&lt;link&gt;</code> tag:</p>
+
+<p><code>&lt;link rel="import" href="import-file.html"&gt;</code></p>
+
+<p>Job done!</p>
+
+<h2>Model Driven Views</h2>
+
+<p>MDV (Model Driven Views) is the only part of the spec currently assigned an Implementation Status of &#8216;In progress&#8217;. However, it is certainly far enough along to get a good idea of what it will offer. Essentially, MDV standardises the ubiquitous task of generating HTML using templates and data from a model.</p>
+
+<p>If you&#8217;ve ever used mustache or a similar technology, you&#8217;ll be right at home with HTML templates. They look just the same, however they can live directly on the DOM. Crucially, though, they are parsed and not rendered. This means that you cannot access the innards of an HTML template via JavaScript, nor will any CSS or JavaScript be evaluated until it is stamped out onto the page.</p>
+
+<p>MDVs are not simply templates, however. The HTML generated from the templates includes a property called &#8220;templateInstance&#8221; which stores a reference to the data used to create the template.</p>
+
+<p>This means that whenever the data changes, so does the generated HTML. It even works vice versa, if a user enters a value into an input in your template which is bound to an attribute in your model, that model will get updated instantly.</p>
+
+<p>MDV obviously doesn&#8217;t offer anything that a myriad of frameworks and libraries already offer, but it sure will be nice to have it standardised.</p>
+
+<hr />
+
+<h1>Summing Up</h1>
+
+<p>Polymer is a mind-boggling concept when you get your head round it. It is not a replacement for Backbone, Angular or other frameworks, but it will drastically change the way they work and the way we think about web applications for the better. The ability to build a webapp piece by piece with custom elements building on top of each other, each standalone and encapsulated is deeply exciting and feels like the right direction to be heading in.</p>
+
+<p>There are some niggles still. Polyfills often support legacy browsers, however if you need to support IE 8 then you&#8217;re out of luck. Even IE 9 isn&#8217;t officially supported.</p>
+
+<p>There is also a healthy ongoing discussion over how this technology should be structured. Should data be a separate tag? Should JavaScript and styling be external to the HTML file where your custom element is defined, or should it all go in one file (&#8216;Taco-style&#8217; as the team evocatively call it)? What will the distribution and repository system look like?</p>
+
+<p>I&#8217;m also slightly wary of the &#8216;everything is an element&#8217; approach. I&#8217;m completely onboard with actual custom components, but during the demonstration the Polymer team showed how Web Animations (which I haven&#8217;t covered here) will look. Each transition was a new HTML element, and personally I found it harder to grok then animations defined using JavaScript; it felt worryingly like a return to XML definitions. The team reassured me that imperative declarations would be supported, but they also made it clear that the HTML element approach was preferred.</p>
+
+<p>However, this is a new and constantly changing technology. It seems to have changed fairly significantly even since the GoogleIO presentations, styling syntax in particular. What I&#8217;ve discussed here is also only a small fraction of the project, head over to <a href="http://www.polymer-project.org">http://www.polymer-project.org</a>, and make sure to watch the two videos below which give a more comprehensive introduction to Polymer and Web Components. Lastly, <a href="https://github.com/polymer/polymer">download the code</a>, <a href="http://www.polymer-project.org/discuss.html">join the mailing list</a> and make your voice heard!</p>
+
+<hr />
+
+<iframe width="560" height="315" src="http://larister.github.com//www.youtube.com/embed/fqULJBBEVQE" frameborder="0" allowfullscreen></iframe>
+
+
+<hr />
+
+<iframe width="560" height="315" src="http://larister.github.com//www.youtube.com/embed/0g0oOOT86NY" frameborder="0" allowfullscreen></iframe>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Starting a coding meetup]]></title>
