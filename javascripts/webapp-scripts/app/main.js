@@ -1,14 +1,14 @@
 require([
     'app/utility/totalsCalculator',
     'app/utility/csvParser',
-    'libs/tabler/tabler',
+    // 'libs/tabler/tabler',
     'mustache!packingRecord',
     'mustache!packingTotals',
     'mustache!alertMessage'
 ], function(
     totalsCalculator,
     csvParser,
-    tabler,
+    // tabler,
     packingRecordTemplate,
     packingTotalsTemplate,
     alertMessageTemplate
@@ -30,21 +30,16 @@ require([
         return false;
     }
 
-    function renderDeliverySheet(records){
-        var table = tabler.create([
-            {field: 'firstName', name: 'First Name'},
-            {field: 'lastName', name: 'Last Name'},
-            {field: 'customerNumber', name: 'Customer Number'},
-            {field: 'address', name: 'Customer Number'}
-        ]);
+    // function renderDeliverySheet(records, collectionContact){
+    //     var table = tabler.create([
+    //         {field: 'firstName', name: 'First Name'},
+    //         {field: 'lastName', name: 'Last Name'},
+    //         {field: 'customerNumber', name: 'Customer Number'},
+    //         {field: 'address', name: 'Customer Number'},
+    //     ]);
 
-        table.load(records);
-        table.render();
-
-        $results.append('<h2>Delivery Sheet for ' + records[0].deliveryRoute + '</h2>');
-
-        $results.append(table.$el);
-    }
+    //     $results.append('<h2>Delivery Sheet for ' + records[0].deliveryRoute + '</h2>');
+    // }
 
     function renderPackingSheet(rounds){
         _(rounds).each(function(records){
@@ -82,8 +77,6 @@ require([
 
     function onAllRoundsLoaded(rounds){
         var totals = totalsCalculator.calculateTotals(rounds);
-
-        renderDeliverySheet(rounds[0]);
 
         renderTotals(totals);
 
