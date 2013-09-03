@@ -38,13 +38,13 @@ require([
     //         {field: 'address', name: 'Customer Number'},
     //     ]);
 
-    //     $results.append('<h2>Delivery Sheet for ' + records[0].deliveryRoute + '</h2>');
+    //     $results.append('<h2>Delivery Sheet for ' + records[0].deliveryService + '</h2>');
     // }
 
     function renderPackingSheet(rounds){
         _(rounds).each(function(records){
             $results.append('<div class="page-break"></div>');
-            $results.append('<h2>Customer Details for ' + records[0].deliveryRoute + '</h2>');
+            $results.append('<h2>Customer Details for ' + records[0].deliveryService + '</h2>');
 
             _(records).each(function(record){
                 $results.append(packingRecordTemplate(record));
@@ -55,7 +55,7 @@ require([
     function renderTotals(totals){
         _(totals).each(function(roundTotals){
             var roundTotalsHTML = packingTotalsTemplate({
-                heading: 'Round Totals for ' + roundTotals.deliveryRoute,
+                heading: 'Round Totals for ' + roundTotals.deliveryService,
                 boxes: totalsCalculator.formatTotals(roundTotals.boxTotals),
                 extras: totalsCalculator.formatTotals(roundTotals.extraTotals)
             });

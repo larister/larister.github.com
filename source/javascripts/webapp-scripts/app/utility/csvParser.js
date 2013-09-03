@@ -2,7 +2,7 @@ define(function(){
     'use strict';
 
     var requiredFields = [
-        'Delivery Route',
+        'Delivery Service',
         'Customer Number',
         'Customer First Name',
         'Customer Last Name',

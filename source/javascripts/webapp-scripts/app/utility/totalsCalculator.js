@@ -58,7 +58,7 @@ define(function(){
             var extraTotals = this.aggregateBoxExtras(extras);
 
             return {
-                deliveryRoute: records[0].deliveryRoute, // Pluck out the round name from the first record (they're all the same)
+                deliveryService: records[0].deliveryService, // Pluck out the round name from the first record (they're all the same)
                 boxTotals: boxTypes,
                 extraTotals: extraTotals
             };
