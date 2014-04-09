@@ -4,7 +4,7 @@ define(function(){
     return {
 
         aggregateBoxExtras: function(boxExtras){
-            var quantityRegexp = /[0-9]+(?=x)/;
+            var quantityRegexp = /(?:\(x)([0-9]+)(?:\))/;
             var extraTotals;
 
             extraTotals = _(boxExtras).reduce(function(memo, extrasEntry){
@@ -19,17 +19,15 @@ define(function(){
                         return;
                     }
 
-                    var quantity = quantityRegexp.exec(item);
+                    var quantityMatch = quantityRegexp.exec(item);
+                    var quantity = quantityMatch ? parseInt(quantityMatch[1], 10) : 1;
                     // Horrible. Must learn regex better :()
-                    var itemName = item.substring(item.indexOf('x ') + 2);
+                    var itemName = quantityMatch ? item.substring(0, item.indexOf('(x') - 1) : item;
 
-                    if(!quantity.length){
-                        return console.warn('Could not find quantity for: ' + item);
-                    }
                     if(!memo[itemName]){
-                        memo[itemName] = parseInt(quantity, 10);
+                        memo[itemName] = quantity;
                     } else {
-                        memo[itemName] = memo[itemName] + parseInt(quantity, 10);
+                        memo[itemName] = memo[itemName] + quantity;
                     }
                 });
 
