@@ -1,4 +1,4 @@
 larister.github.com
 ===================
 
-Blog
+My personal blog
