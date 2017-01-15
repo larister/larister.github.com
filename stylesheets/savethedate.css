@@ -1,0 +1,86 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    background-image: url("../images/south-downs.png");
+    background-size: cover;
+}
+
+.container {
+    height: 100%;
+    position: relative;
+}
+
+.background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    opacity: 0.7;
+}
+
+.title {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+.headline {
+    font-size: 10em;
+    line-height: 0.95;
+}
+
+.info {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 2.5em;
+}
+
+.postscript {
+    font-family: "Work Sans", sans-serif;
+    font-size: 1em;
+}
+
+@media (max-width: 350px) {
+    .headline {
+        font-size: 7em;
+    }
+
+    .info {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 400px) {
+    .headline {
+        font-size: 9em;
+    }
+
+    .info {
+        font-size: 2em;
+    }
+}
+
+.margintop {
+    margin-top: 10px;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+.marginbottom {
+    margin-bottom: 10px;
+}
+
