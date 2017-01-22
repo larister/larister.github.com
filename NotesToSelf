@@ -1,0 +1,5 @@
+Looks like Octopress has been updated and now no longer works.
+
+For dev mode: rake preview
+
+For building: rake generate, then rake deploy. Then need to checkout master branch, copy across the appropriate files from `public`, and do a manual commit/push. Great eh?
